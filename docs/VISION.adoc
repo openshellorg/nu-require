@@ -1,0 +1,28 @@
+= Vision: why `nu-require` exists
+
+== The dual-role bug
+
+Classical shells bind two jobs to one byte stream:
+
+* **Transport** — pipe unstructured bytes between processes
+* **Presentation** — paint those bytes on a terminal grid
+
+TUIs abandon the pipe. Plain CLIs keep the pipe and lose layout. Structured shells (Nushell; PowerShell pioneered objects) pass typed data in the pipeline and render only at the screen boundary.
+
+== Product decision
+
+Tools that *depend* on Nushell-structured behavior should not silently degrade under bash/zsh/pwsh. They should:
+
+. Detect the host shell
+. Fail loudly with a homepage link if it is not Nushell
+. Optionally offer install on supported OSes
+
+That is `nu-require.validate()`.
+
+== What we will not do
+
+* Reinvent Nushell
+* Treat PowerShell as an alternate supported host for Nushell-tailored CLIs
+* Pretend TUI frameworks solve the pipe/layout split
+
+Companion standards live in link:https://github.com/openshellorg/shell-architecture[shell-architecture]. Flag-syntax certification remains SOS in link:https://github.com/openshellorg/open-shell-org[open-shell-org].

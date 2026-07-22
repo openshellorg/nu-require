@@ -1,0 +1,45 @@
+= nu-require
+:toc:
+
+CLI helper library: **require Nushell** as the host shell for tailored tools.
+
+== Idea
+
+Nushell-tailored CLIs call `validate()` near process start. If the current shell is not Nushell, the library:
+
+. Prints a clear error that the tool requires Nushell
+. Links to https://www.nushell.sh/
+. Optionally offers a one-shot install on platforms where install commands are worth hard-coding (`winget`, `brew`, documented curl/script paths)
+
+PowerShell is **not** treated as an acceptable host for these tailored tools.
+
+== Status
+
+Early scaffold. API shape is stable enough to implement against; detection heuristics will harden over time.
+
+== API sketch (TypeScript)
+
+[source,typescript]
+----
+import { validate } from "@openshellorg/nu-require";
+
+// Line 1 of your CLI:
+await validate({ offerInstall: true });
+----
+
+See `packages/nu-require/` for the stub implementation.
+
+== Docs
+
+* link:docs/VISION.adoc[VISION] — why require Nushell
+* link:CHANGELOG.adoc[CHANGELOG]
+
+== Related
+
+* https://github.com/openshellorg/shell-architecture — architecture thesis
+* https://github.com/openshellorg/open-shell-org — SOS flag syntax / certification
+* https://www.nushell.sh/ — Nushell homepage
+
+== License
+
+MIT
