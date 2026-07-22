@@ -5,17 +5,28 @@ CLI helper library: **require Nushell** as the host shell for tailored tools.
 
 == Idea
 
-Nushell-tailored CLIs call `validate()` near process start. If the current shell is not Nushell, the library:
+Nushell-tailored CLIs call `validate()` near process start:
 
-. Prints a clear error that the tool requires Nushell
-. Links to https://www.nushell.sh/
-. Optionally offers a one-shot install on platforms where install commands are worth hard-coding (`winget`, `brew`, documented curl/script paths)
+[source,typescript]
+----
+import { validate } from "@openshellorg/nu-require";
 
-PowerShell is **not** treated as an acceptable host for these tailored tools.
+await validate({ offerInstall: true });
+----
+
+Behavior:
+
+. **Already under Nushell** → continue normally.
+. **Not under Nushell, but `nu` is on PATH** → print that the tool is relaunching inside Nushell, then re-exec the same binary/argv via `nu -c`. The user can keep invoking `myCLItool` from bash/zsh/pwsh; the process hops into Nushell automatically.
+. **`nu` missing** → clear error, link to https://www.nushell.sh/, optionally offer a one-shot install (`winget` / `brew` / docs) when `offerInstall: true`.
+
+PowerShell is **not** treated as an acceptable host for these tailored tools (relaunch-to-Nushell is the bridge, not “support pwsh”).
+
+Pass `relaunch: false` only when you want hard-fail instead of auto-relaunch.
 
 == Status
 
-Early scaffold. API shape is stable enough to implement against; detection heuristics will harden over time.
+Early scaffold. Detection and quoting heuristics will harden over time. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch if host detection still fails after hopping into `nu`.
 
 == API sketch (TypeScript)
 
@@ -24,14 +35,14 @@ Early scaffold. API shape is stable enough to implement against; detection heuri
 import { validate } from "@openshellorg/nu-require";
 
 // Line 1 of your CLI:
-await validate({ offerInstall: true });
+await validate({ offerInstall: true }); // relaunch defaults to true
 ----
 
-See `packages/nu-require/` for the stub implementation.
+See `packages/nu-require/` for the implementation.
 
 == Docs
 
-* link:docs/VISION.adoc[VISION] — why require Nushell
+* link:docs/VISION.adoc[VISION] — why require Nushell (and relaunch)
 * link:CHANGELOG.adoc[CHANGELOG]
 
 == Related

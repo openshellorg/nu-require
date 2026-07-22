@@ -2,4 +2,6 @@
 
 == Unreleased
 
+* Relaunch path: when `nu` is on PATH but the host shell is not Nushell, print a message and re-exec the CLI under `nu` (default `relaunch: true`).
+* Loop guard via `NU_REQUIRE_RELAUNCHED`.
 * Initial scaffold: AsciiDoc docs, TypeScript `validate()` stub, MIT license.
