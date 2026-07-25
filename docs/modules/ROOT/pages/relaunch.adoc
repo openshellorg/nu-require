@@ -1,0 +1,17 @@
+= Relaunch Behavior
+:description: How nu-require hops into Nushell when nu is on PATH.
+
+Users will keep opening tools from Windows Terminal profiles, IDE tasks, and muscle-memory `pwsh`/`bash` sessions.
+Forcing them to remember "open a nu shell first" is friction.
+If `nu` is on `PATH`, hopping into Nushell for that one command is the polite default:
+
+----
+$ myCLItool status
+Nushell is installed, but this shell is not Nushell. Relaunching inside Nushell…
+(... tool runs under nu ...)
+----
+
+The tool still *requires* Nushell as the real host; it does not pretend bash/pwsh are supported runtimes.
+
+Detection and quoting heuristics will harden over time.
+Early scaffold status — see the repository README for current readiness.

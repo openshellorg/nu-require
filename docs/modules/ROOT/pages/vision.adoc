@@ -37,4 +37,5 @@ The tool still *requires* Nushell as the real host; it does not pretend bash/pws
 * Treat PowerShell as an alternate supported host for Nushell-tailored CLIs
 * Pretend TUI frameworks solve the pipe/layout split
 
-Companion standards live in link:https://github.com/openshellorg/shell-architecture[shell-architecture]. Flag-syntax certification remains SOS in link:https://github.com/openshellorg/open-shell-org[open-shell-org].
+Companion standards live in xref:shell-architecture::index.adoc[shell-architecture].
+Flag-syntax certification remains SOS in xref:open-shell-org::index.adoc[open-shell-org].

@@ -1,0 +1,9 @@
+= Install Offer
+:description: Optional one-shot Nushell install when nu is missing.
+
+When `nu` is missing and `offerInstall: true`:
+
+* Clear error with a link to https://www.nushell.sh/
+* Optional one-shot install hints (`winget` / `brew` / docs)
+
+When `offerInstall` is false (or declined), fail loudly — do not silently degrade under classical shells.

@@ -1,0 +1,16 @@
+= TypeScript API
+:description: validate() sketch for requiring Nushell.
+
+[source,typescript]
+----
+import { validate } from "@openshellorg/nu-require";
+
+// Line 1 of your CLI:
+await validate({ offerInstall: true }); // relaunch defaults to true
+----
+
+Pass `relaunch: false` only when you want hard-fail instead of auto-relaunch.
+
+See `packages/nu-require/` in the repository for the implementation.
+
+Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch if host detection still fails after hopping into `nu`.

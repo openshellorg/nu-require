@@ -1,0 +1,6 @@
+name: nu-require
+title: nu-require
+version: ~
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc

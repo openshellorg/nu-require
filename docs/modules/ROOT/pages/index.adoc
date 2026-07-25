@@ -1,0 +1,37 @@
+= nu-require
+:description: Require Nushell as the host shell for tailored CLIs.
+
+CLI helper library: *require Nushell* as the host shell for tailored tools.
+
+== Idea
+
+Nushell-tailored CLIs call `validate()` near process start:
+
+[source,typescript]
+----
+import { validate } from "@openshellorg/nu-require";
+
+await validate({ offerInstall: true });
+----
+
+Behavior:
+
+. *Already under Nushell* → continue normally.
+. *Not under Nushell, but `nu` is on PATH* → print that the tool is relaunching inside Nushell, then re-exec the same binary/argv via `nu -c`.
+. *`nu` missing* → clear error, link to https://www.nushell.sh/, optionally offer a one-shot install when `offerInstall: true`.
+
+PowerShell is *not* treated as an acceptable host for these tailored tools (relaunch-to-Nushell is the bridge, not "support pwsh").
+
+== In this component
+
+* xref:vision.adoc[Vision] — dual-role bug and product decision
+* xref:api.adoc[TypeScript API] — `validate()` options
+* xref:relaunch.adoc[Relaunch Behavior] — hop into `nu`
+* xref:install-offer.adoc[Install Offer] — winget / brew / docs
+
+== Related
+
+* xref:shell-architecture::index.adoc[shell-architecture] — architecture thesis
+* xref:open-shell-org::index.adoc[open-shell-org] — SOS flag syntax / certification
+* xref:nu-emit::index.adoc[nu-emit] — structured emit for Nushell
+* https://www.nushell.sh/[Nushell]
