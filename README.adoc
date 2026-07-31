@@ -48,7 +48,7 @@ See `packages/nu-require/` for the implementation.
 == Related
 
 * https://github.com/openshellorg/shell-architecture — architecture thesis
-* https://github.com/openshellorg/open-shell-org — SOS flag syntax / certification
+* https://github.com/openshellorg/docs — SOS flag syntax / certification
 * https://www.nushell.sh/ — Nushell homepage
 
 == License
