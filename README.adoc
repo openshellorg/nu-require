@@ -1,9 +1,34 @@
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/nu-require/graphs/contributors]
+image:https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/nu-require/network/members]
+image:https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/nu-require/stargazers]
+image:https://img.shields.io/github/issues/openshellorg/nu-require.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/nu-require/issues]
+image:https://img.shields.io/github/license/openshellorg/nu-require.svg?style=for-the-badge[License,link=https://github.com/openshellorg/nu-require/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/openshellorg/nu-require.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/openshellorg/nu-require.svg?style=for-the-badge[License]
+endif::[]
+
 = nu-require
-:toc:
+
+Require Nushell as the host shell for tailored CLIs (validate + optional relaunch/install).
+
+link:https://github.com/openshellorg/nu-require/issues[Report Bug] ·
+link:https://github.com/openshellorg/nu-require/issues[Request Feature]
+
+== About The Project
 
 CLI helper library: **require Nushell** as the host shell for tailored tools.
-
-== Idea
 
 Nushell-tailored CLIs call `validate()` near process start:
 
@@ -17,30 +42,23 @@ await validate({ offerInstall: true });
 Behavior:
 
 . **Already under Nushell** → continue normally.
-. **Not under Nushell, but `nu` is on PATH** → print that the tool is relaunching inside Nushell, then re-exec the same binary/argv via `nu -c`. The user can keep invoking `myCLItool` from bash/zsh/pwsh; the process hops into Nushell automatically.
-. **`nu` missing** → clear error, link to https://www.nushell.sh/, optionally offer a one-shot install (`winget` / `brew` / docs) when `offerInstall: true`.
-
-PowerShell is **not** treated as an acceptable host for these tailored tools (relaunch-to-Nushell is the bridge, not “support pwsh”).
+. **Not under Nushell, but `nu` is on PATH** → relaunch inside Nushell via `nu -c`.
+. **`nu` missing** → clear error, link to https://www.nushell.sh/, optionally offer install when `offerInstall: true`.
 
 Pass `relaunch: false` only when you want hard-fail instead of auto-relaunch.
 
-== Status
+Early scaffold. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch.
 
-Early scaffold. Detection and quoting heuristics will harden over time. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch if host detection still fails after hopping into `nu`.
+== Installation
 
-== API sketch (TypeScript)
-
-[source,typescript]
+[source,bash]
 ----
-import { validate } from "@openshellorg/nu-require";
-
-// Line 1 of your CLI:
-await validate({ offerInstall: true }); // relaunch defaults to true
+pnpm add @openshellorg/nu-require
 ----
+
+== Usage
 
 See `packages/nu-require/` for the implementation.
-
-== Docs
 
 * link:docs/VISION.adoc[VISION] — why require Nushell (and relaunch)
 * link:CHANGELOG.adoc[CHANGELOG]
@@ -53,4 +71,11 @@ See `packages/nu-require/` for the implementation.
 
 == License
 
-MIT
+MIT — see link:LICENSE[LICENSE].
+
+== Contact
+
+Open Shell Org — openshell@devcentr.org
+
+* Project: https://github.com/openshellorg/nu-require
+* Site: https://openshellorg.github.io
