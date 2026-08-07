@@ -3,21 +3,12 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/nu-require/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/nu-require/network/members]
 image:https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/nu-require/stargazers]
 image:https://img.shields.io/github/issues/openshellorg/nu-require.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/nu-require/issues]
 image:https://img.shields.io/github/license/openshellorg/nu-require.svg?style=for-the-badge[License,link=https://github.com/openshellorg/nu-require/blob/main/LICENSE]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/openshellorg/nu-require.svg?style=for-the-badge[Issues]
-image:https://img.shields.io/github/license/openshellorg/nu-require.svg?style=for-the-badge[License]
-endif::[]
 
 = nu-require
 
@@ -49,6 +40,8 @@ Pass `relaunch: false` only when you want hard-fail instead of auto-relaunch.
 
 Early scaffold. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch.
 
+link:#readme-top[back to top]
+
 == Installation
 
 [source,bash]
@@ -56,12 +49,16 @@ Early scaffold. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch.
 pnpm add @openshellorg/nu-require
 ----
 
+link:#readme-top[back to top]
+
 == Usage
 
 See `packages/nu-require/` for the implementation.
 
 * link:docs/VISION.adoc[VISION] — why require Nushell (and relaunch)
 * link:CHANGELOG.adoc[CHANGELOG]
+
+link:#readme-top[back to top]
 
 == Related
 
@@ -73,9 +70,13 @@ See `packages/nu-require/` for the implementation.
 
 MIT — see link:LICENSE[LICENSE].
 
+link:#readme-top[back to top]
+
 == Contact
 
 Open Shell Org — openshell@devcentr.org
 
 * Project: https://github.com/openshellorg/nu-require
 * Site: https://openshellorg.github.io
+
+link:#readme-top[back to top]
