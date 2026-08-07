@@ -3,7 +3,28 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-[[readme-top]]
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/openshellorg/nu-require/graphs/contributors"><img src="https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/openshellorg/nu-require/network/members"><img src="https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/openshellorg/nu-require/stargazers"><img src="https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/openshellorg/nu-require/issues"><img src="https://img.shields.io/github/issues/openshellorg/nu-require.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/openshellorg/nu-require/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openshellorg/nu-require.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">nu-require</h3>
+<p align="center">
+Require Nushell as the host shell for tailored CLIs (validate + optional relaunch/install).<br />
+<a href="https://github.com/openshellorg/nu-require/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/openshellorg/nu-require/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/openshellorg/nu-require.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/nu-require/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/nu-require.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/nu-require/network/members]
 image:https://img.shields.io/github/stars/openshellorg/nu-require.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/nu-require/stargazers]
@@ -16,6 +37,7 @@ Require Nushell as the host shell for tailored CLIs (validate + optional relaunc
 
 link:https://github.com/openshellorg/nu-require/issues[Report Bug] ·
 link:https://github.com/openshellorg/nu-require/issues[Request Feature]
+endif::[]
 
 == About The Project
 
@@ -40,8 +62,9 @@ Pass `relaunch: false` only when you want hard-fail instead of auto-relaunch.
 
 Early scaffold. Loop guard: `NU_REQUIRE_RELAUNCHED` prevents infinite relaunch.
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Installation
 
 [source,bash]
@@ -49,8 +72,9 @@ link:#readme-top[back to top]
 pnpm add @openshellorg/nu-require
 ----
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Usage
 
 See `packages/nu-require/` for the implementation.
@@ -58,8 +82,9 @@ See `packages/nu-require/` for the implementation.
 * link:docs/VISION.adoc[VISION] — why require Nushell (and relaunch)
 * link:CHANGELOG.adoc[CHANGELOG]
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Related
 
 * https://github.com/openshellorg/shell-architecture — architecture thesis
@@ -70,8 +95,9 @@ link:#readme-top[back to top]
 
 MIT — see link:LICENSE[LICENSE].
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Contact
 
 Open Shell Org — openshell@devcentr.org
@@ -79,4 +105,6 @@ Open Shell Org — openshell@devcentr.org
 * Project: https://github.com/openshellorg/nu-require
 * Site: https://openshellorg.github.io
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
