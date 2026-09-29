@@ -1,9 +1,13 @@
 = nu-require
 :description: Require Nushell as the host shell for tailored CLIs.
+:page-audience: Developers writing Nushell-tailored CLIs
+:page-usage-context: Overview of the startup `validate()` gate, relaunch, and install offer
+:page-last-author: cursor-agent on behalf of OpenShellOrg
+:page-last-edited: 2026-09-29
 
-CLI helper library: *require Nushell* as the host shell for tailored tools.
-
-== Idea
+`nu-require` is a small TypeScript library CLIs call at startup to require Nushell as the host shell.
+It either continues under Nu, relaunches the same binary and argv via `nu -c`, or errors with an install path when `nu` is missing.
+PowerShell is not an alternate supported host.
 
 Nushell-tailored CLIs call `validate()` near process start:
 
@@ -20,9 +24,7 @@ Behavior:
 . *Not under Nushell, but `nu` is on PATH* → print that the tool is relaunching inside Nushell, then re-exec the same binary/argv via `nu -c`.
 . *`nu` missing* → clear error, link to https://www.nushell.sh/, optionally offer a one-shot install when `offerInstall: true`.
 
-PowerShell is *not* treated as an acceptable host for these tailored tools (relaunch-to-Nushell is the bridge, not "support pwsh").
-
-== In this component
+== In this module
 
 * xref:vision.adoc[Vision] — dual-role bug and product decision
 * xref:api.adoc[TypeScript API] — `validate()` options
@@ -33,5 +35,5 @@ PowerShell is *not* treated as an acceptable host for these tailored tools (rela
 
 * xref:shell-architecture::index.adoc[shell-architecture] — architecture thesis
 * xref:open-shell-org::index.adoc[open-shell-org] — SOS flag syntax / certification
-* xref:nu-emit::index.adoc[nu-emit] — structured emit for Nushell
+* xref:nu-emit:index.adoc[nu-emit] — structured emit for Nushell
 * https://www.nushell.sh/[Nushell]

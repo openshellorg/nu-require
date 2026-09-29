@@ -1,6 +1,6 @@
-name: nu-require
-title: nu-require
+name: tools
+title: Tools
 version: ~
-start_page: ROOT:index.adoc
+# start_page optional; hub may own ROOT
 nav:
-  - modules/ROOT/nav.adoc
+  - modules/nu-require/nav.adoc
