@@ -24,7 +24,7 @@ Behavior:
 . *Not under Nushell, but `nu` is on PATH* → print that the tool is relaunching inside Nushell, then re-exec the same binary/argv via `nu -c`.
 . *`nu` missing* → clear error, link to https://www.nushell.sh/, optionally offer a one-shot install when `offerInstall: true`.
 
-== In this component
+== In this module
 
 * xref:vision.adoc[Vision] — dual-role bug and product decision
 * xref:api.adoc[TypeScript API] — `validate()` options
@@ -35,5 +35,5 @@ Behavior:
 
 * xref:shell-architecture::index.adoc[shell-architecture] — architecture thesis
 * xref:open-shell-org::index.adoc[open-shell-org] — SOS flag syntax / certification
-* xref:nu-emit::index.adoc[nu-emit] — structured emit for Nushell
+* xref:nu-emit:index.adoc[nu-emit] — structured emit for Nushell
 * https://www.nushell.sh/[Nushell]
