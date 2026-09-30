@@ -2,7 +2,10 @@
 :description: Require Nushell as the host shell for tailored CLIs.
 :page-audience: Developers writing Nushell-tailored CLIs
 :page-usage-context: Overview of the startup `validate()` gate, relaunch, and install offer
-:page-last-author: cursor-agent on behalf of OpenShellOrg
+:page-orig-author: Ryan Johnson
+:page-orig-author-github: AMDphreak
+:page-last-author: Ryan Johnson
+:page-last-author-github: AMDphreak
 :page-last-edited: 2026-09-29
 
 `nu-require` is a small TypeScript library CLIs call at startup to require Nushell as the host shell.
