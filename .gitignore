@@ -18,3 +18,8 @@ node_modules/
 **/node_modules/
 **/dist/
 **/*.local.*
+!/.github/
+!/.github/workflows/
+!/.github/workflows/encoding-guard.yml
+!/.editorconfig
+!/.gitattributes
