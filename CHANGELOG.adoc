@@ -2,6 +2,7 @@
 
 == Unreleased
 
+* Docs: credit Ryan Johnson (AMDphreak) on `nu-require` module index page attributes.
 * Docs: register under shared Antora component `tools` (`nu-require` module); cold-reader overview lede.
 * Relaunch path: when `nu` is on PATH but the host shell is not Nushell, print a message and re-exec the CLI under `nu` (default `relaunch: true`).
 * Loop guard via `NU_REQUIRE_RELAUNCHED`.
